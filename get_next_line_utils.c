@@ -6,14 +6,14 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:04:23 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/22 05:57:51 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/22 07:09:53 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
 
-void		*ft_expand(char *s1, char *s2, int n1, int n2)
+void	*ft_expand(char *s1, char *s2, int n1, int n2)
 {
 	int		i;
 	int		i2;
@@ -82,7 +82,7 @@ char	*ft_memdup(const void *s, size_t n)
 	int		i;
 
 	i = -1;
-	if (!(res = (char*)malloc(sizeof(char) *  n + 1)))
+	if (!(res = (char*)malloc(sizeof(char) * n + 1)))
 		return (NULL);
 	while (++i < n)
 		res[i] = ((unsigned char *)s)[i];

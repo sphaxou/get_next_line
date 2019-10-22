@@ -6,15 +6,15 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 08:20:54 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/22 06:13:45 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/22 07:08:22 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-# include <stdlib.h>
 # define GET_NEXT_LINE_H
+# include <stdlib.h>
 # define BUFFER_SIZE 10000
-# define MAX_FD 300
+# define MAX_FD 590432
 
 typedef struct	s_gnl
 {
@@ -22,7 +22,7 @@ typedef struct	s_gnl
 	int		size;
 	int		fd;
 }				t_gnl;
-#include <stdio.h>
+
 int				get_next_line(int fd, char **line);
 void			*ft_expand(char *s1, char *s2, int n1, int n2);
 void			*ft_memmove(void *dst, const void *src, size_t len);

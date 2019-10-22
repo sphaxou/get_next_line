@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/22 06:14:29 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/22 07:09:20 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-int		findbn(char *s, int	size)
+int			findbn(char *s, int size)
 {
 	int				i;
 
@@ -29,7 +29,16 @@ int		findbn(char *s, int	size)
 	return (i);
 }
 
-int		assign_line(t_gnl *gnl, char **line)
+int			do_stuff(t_gnl *gnl, int i, char **line)
+{
+	*line = ft_memdup((*gnl).content, i);
+	(*gnl).content =
+		ft_memmove((*gnl).content, (*gnl).content + i + 1, (*gnl).size - i);
+	(*gnl).size -= i + 1;
+	return (1);
+}
+
+int			assign_line(t_gnl *gnl, char **line)
 {
 	char			buff[BUFFER_SIZE];
 	int				ret;
@@ -44,20 +53,12 @@ int		assign_line(t_gnl *gnl, char **line)
 		(*gnl).size += ret;
 		i = findbn((*gnl).content, (*gnl).size);
 		if (i < (*gnl).size)
-		{
-			*line = ft_memdup((*gnl).content, i);
-			(*gnl).content = ft_memmove((*gnl).content, (*gnl).content + i + 1, (*gnl).size - i + 1);
-			(*gnl).size -= i + 1;
-			return (1);
-		}
+			return (do_stuff(gnl, i, line));
 	}
 	if ((*gnl).size > 0)
 	{
 		i = findbn((*gnl).content, (*gnl).size);
-		*line = ft_memdup((*gnl).content, i);
-		(*gnl).content = ft_memmove((*gnl).content, (*gnl).content + i + 1, (*gnl).size - i);
-		(*gnl).size -= i + 1;
-		return (1);
+		return (do_stuff(gnl, i, line));
 	}
 	*line = NULL;
 	return (0);
@@ -82,7 +83,7 @@ t_gnl		*init(t_gnl *tab)
 	return (tab);
 }
 
-int		get_next_line(int fd, char **line)
+int			get_next_line(int fd, char **line)
 {
 	static t_gnl	*tab = NULL;
 	int				i;
