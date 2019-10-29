@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/29 13:54:57 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/29 13:57:44 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <sys/types.h>
 #include <sys/uio.h>
 #include <unistd.h>
