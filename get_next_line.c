@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/24 14:31:44 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/29 13:31:12 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ int			findbn(char *s, int size)
 
 int			do_stuff(t_gnl *gnl, int i, char **line)
 {
+	int				res;
+
+	res = (*gnl).content[i] == '\n' ? 1 : 0;
 	*line = ft_memdup((*gnl).content, i);
 	(*gnl).content =
 		ft_memmove((*gnl).content, (*gnl).content + i + 1, (*gnl).size - i);
 	(*gnl).size -= i + 1;
-	return (1);
+	return (res);
 }
 
 int			assign_line(t_gnl *gnl, char **line)
