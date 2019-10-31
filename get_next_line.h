@@ -6,14 +6,16 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 08:20:54 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/29 13:56:44 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/29 14:12:58 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
-# define BUFFER_SIZE 10000
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10000
+# endif
 # define MAX_FD 590432
 
 typedef struct	s_gnl

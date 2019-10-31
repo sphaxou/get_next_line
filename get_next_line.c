@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/29 13:54:57 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/10/31 20:34:57 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int			do_stuff(t_gnl *gnl, int i, char **line)
 	*line = ft_memdup((*gnl).content, i);
 	(*gnl).content =
 		ft_memmove((*gnl).content, (*gnl).content + i + 1, (*gnl).size - i);
-	(*gnl).size -= i + 1;
+	(*gnl).size -= i + res;
 	return (res);
 }
 
@@ -62,7 +62,7 @@ int			assign_line(t_gnl *gnl, char **line)
 		i = findbn((*gnl).content, (*gnl).size);
 		return (do_stuff(gnl, i, line));
 	}
-	*line = NULL;
+	*line = ft_memdup("", 0);
 	return (0);
 }
 
