@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:29:08 by vgallois          #+#    #+#             */
-/*   Updated: 2019/11/05 19:57:35 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/05 20:02:08 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int	i;
-	char *line;
-	int	fd;
-	int	j;
+	int		i;
+	char	*line;
+	int		fd;
+	int		j;
 
 	j = 0;
 	ac = 0;

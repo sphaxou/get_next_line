@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/11/05 19:56:01 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/05 20:01:42 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,26 +63,7 @@ int			assign_line(t_gnl *gnl, char **line)
 	}
 	return (0);
 }
-/*
-t_gnl		*init(t_gnl *tab)
-{
-	int				i;
 
-	if (!(tab = (t_gnl *)malloc(sizeof(*tab) * (MAX_FD + 1))))
-		return (NULL);
-	i = 0;
-	while (i < MAX_FD)
-	{
-		if (!(tab[i].content = malloc(1)))
-			return (NULL);
-		((char *)tab[i].content)[0] = 0;
-		tab[i].size = 0;
-		tab[i].fd = i;
-		i++;
-	}
-	return (tab);
-}
-*/
 int			get_next_line(int fd, char **line)
 {
 	static t_gnl	tab[MAX_FD];

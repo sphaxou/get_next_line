@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 09:04:23 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/24 14:34:03 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/05 20:01:26 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,28 +29,6 @@ void	*ft_expand(char *s1, char *s2, int n1, int n2)
 		res[i++] = s2[i2++];
 	res[i] = '\0';
 	free(s1);
-	return (res);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*res;
-	size_t	i;
-	int		bo;
-
-	i = 0;
-	while (s && s[i] && i < start)
-		i++;
-	bo = (i == start ? 1 : 0);
-	if (!s || !(res = malloc(sizeof(char) * ((bo ? len : 0) + 1))))
-		return (NULL);
-	i = 0;
-	while (bo && s[start + i] && i < len)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = 0;
 	return (res);
 }
 
