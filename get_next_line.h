@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 08:20:54 by vgallois          #+#    #+#             */
-/*   Updated: 2019/10/29 14:12:58 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/05 19:59:20 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10000
 # endif
-# define MAX_FD 590432
+# define MAX_FD 1024
 
 typedef struct	s_gnl
 {
-	char	*content;
+	char	content[BUFFER_SIZE + 1];
 	int		size;
 	int		fd;
 }				t_gnl;
