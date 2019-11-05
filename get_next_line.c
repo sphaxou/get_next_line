@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/11/05 20:01:42 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/05 21:34:03 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int			get_next_line(int fd, char **line)
 {
 	static t_gnl	tab[MAX_FD];
 
-	if (fd < 0)
+	if (fd < 0 || fd > MAX_FD)
 		return (-1);
 	tab[fd].fd = fd;
 	return (assign_line(tab + fd, line));
