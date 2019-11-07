@@ -6,7 +6,7 @@
 /*   By: vgallois <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 04:30:48 by vgallois          #+#    #+#             */
-/*   Updated: 2019/11/05 21:34:03 by vgallois         ###   ########.fr       */
+/*   Updated: 2019/11/07 00:42:58 by vgallois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ int			assign_line(t_gnl *gnl, char **line)
 	int				i;
 
 	*line = ft_memdup((*gnl).content, (*gnl).size);
+	i = findbn(*line, (*gnl).size);
+	if (i < (*gnl).size)
+		return (do_stuff(gnl, i, line));
 	while ((ret = read((*gnl).fd, (*gnl).content, BUFFER_SIZE)))
 	{
 		if (ret == -1)
@@ -53,14 +56,11 @@ int			assign_line(t_gnl *gnl, char **line)
 		*line = ft_expand(*line, (*gnl).content, (*gnl).size, ret);
 		(*gnl).size += ret;
 		i = findbn(*line, (*gnl).size);
-		if (i < (*gnl).size)
+		if (i < (*gnl).size || ret < BUFFER_SIZE)
 			return (do_stuff(gnl, i, line));
 	}
 	if ((*gnl).size > 0)
-	{
-		i = findbn(*line, (*gnl).size);
 		return (do_stuff(gnl, i, line));
-	}
 	return (0);
 }
 
